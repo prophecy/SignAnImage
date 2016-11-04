@@ -18,3 +18,5 @@ OnLoad = function() {
     $(".eTel").text("Tel: ______________________");
 }
 ```
+
+All royalty-free images are from [designinstruct.com](http://designinstruct.com/resource/free-landscape-photos/)
