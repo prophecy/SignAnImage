@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#image').on('change', function () {
+                readURL(this);
+            });
+            $('#manager-name').on('keyup', function () {
+                $('#manager-name-place').text($(this).val());
+            });
+            $('#manager-position').on('keyup', function () {
+                $('#manager-position-place').text($(this).val());
+            });
+            $('#position').on('keyup', function () {
+                $('#position-place').text($(this).val());
+            });
+            $('#tel').on('keyup', function () {
+                $('#tel-place').text($(this).val());
+            });
+        });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader    = new FileReader();
+                reader.onload = function (e) {
+                    $('#image-place').attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+    <style type="text/css">
+        .signature {
+            margin-top: 20px;
+        }
+        .signature-form {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+
+        <form class="form-inline hidden-print text-center signature-form">
+            <div class="form-group">
+                <input type="file" id="image"/>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="manager-name" name="manager-name"
+                       placeholder="Manager Name"/>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="manager-position" name="manager-position"
+                       placeholder="Manager Position"/>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="position" name="position" placeholder="Position"/>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="tel" name="tel" placeholder="Mobile Number"/>
+            </div>
+        </form>
+
+        <div class="row">
+            <img id="image-place" class="img-responsive center-block"/>
+        </div>
+
+        <div class="row signature">
+            <div class="col-xs-6 text-center" id="signature-01">
+                <p>(___________________________)</p>
+                <p id="manager-name-place"></p>
+                <p>Position: <span id="manager-position-place"></span></p>
+            </div>
+            <div class="col-xs-6 text-center" id="signature-02">
+                <p>(___________________________)</p>
+                <p>Position: <span id="position-place"></span></p>
+                <p>Tel: <span id="tel-place"></span></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
