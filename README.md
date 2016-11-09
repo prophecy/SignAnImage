@@ -4,19 +4,5 @@
 
 **How to use**
 
-Replace images in image directory
-
-Modify source code in **model.js**
-```
-
-OnLoad = function() {
-
-    $(".signatureSpace").text("(____________________)");
-    $(".dName").text("[FirstName] [LastName] 01");
-    $(".dPosition").text("Position 01");
-    $(".ePosition").text("Position 02");
-    $(".eTel").text("Tel: ______________________");
-}
-```
-
-All royalty-free images are from [designinstruct.com](http://designinstruct.com/resource/free-landscape-photos/)
+Fill all text fields  
+Print (Do not forget to unselect "Headers and Footers")
